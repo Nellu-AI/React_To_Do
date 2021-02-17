@@ -1,0 +1,17 @@
+.Task {
+  background-color: #272f59;
+  color: #ded0f2;
+  height: 10%;
+  border-radius: 10px;
+  margin: 10px 5px;
+
+  display: grid;
+  grid-template-columns: 15% 40% 15% 20% 10%;
+}
+
+.Task > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
