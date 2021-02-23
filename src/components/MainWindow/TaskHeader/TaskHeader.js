@@ -3,10 +3,10 @@ import './TaskHeader.css';
 
 const taskHeader = (props) => (
   <div className="tableHeader">
-    <div class="_task">Task</div>
-    <div class="_id">#</div>
-    <div class="_date">Create Date</div>
-    <div class="_status">Status</div>
+    <div className="_id">#</div>
+    <div className="_task">Task</div>
+    <div className="_date">Create Date</div>
+    <div className="_status">Status</div>
     <div>Actions</div>
   </div>
 );

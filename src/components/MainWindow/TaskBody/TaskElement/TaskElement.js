@@ -3,22 +3,22 @@ import './TaskElement.css';
 
 const element = (props) => {
   return (
-    <div className="Task" data-id="task-104">
-      <div class="task-id">#task-104</div>
-      <div class="task-description">
-        <span class="task-text">Сделать обед сегодня в 17 00</span>
-        <span class="edit-icon">
-          <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
+    <div className="Task" data-id={props.id}>
+      <div className="task-id">#{props.id}</div>
+      <div className="task-description">
+        <span className="task-text">{props.body}</span>
+        <span className="edit-icon">
+          <i className="fas fa-edit fa-2x" aria-hidden="true"></i>
         </span>
       </div>
-      <div class="task-date">2021-02-05</div>
-      <div class="task-status">very important</div>
-      <div class="task-actions">
-        <span class="edit-icon">
-          <i class="fas fa-edit fa-2x" aria-hidden="true"></i>
+      <div className="task-date">{props.date}</div>
+      <div className="task-status">{props.status}</div>
+      <div className="task-actions">
+        <span className="edit-icon">
+          <i className="fas fa-edit fa-2x" aria-hidden="true"></i>
         </span>
-        <span class="remove-icon">
-          <i class="fas fa-trash fa-2x" aria-hidden="true"></i>
+        <span className="remove-icon">
+          <i className="fas fa-trash fa-2x" aria-hidden="true"></i>
         </span>
       </div>
     </div>

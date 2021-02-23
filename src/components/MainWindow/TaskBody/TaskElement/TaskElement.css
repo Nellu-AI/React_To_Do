@@ -15,3 +15,38 @@
   align-items: center;
   position: relative;
 }
+
+/* Task-actions */
+.task-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-actions span:first-child {
+  margin-right: 10px;
+}
+
+.task-actions span:hover,
+.task-description .edit-icon:hover {
+  color: rgb(218, 162, 23);
+  cursor: pointer;
+}
+
+/* Task desc icon */
+.task-description .edit-icon {
+  opacity: 0;
+  width: 0;
+  position: absolute;
+  right: 10%;
+  transition: width 0.5s, opacity 0.5s;
+}
+
+.Task > div:nth-of-type(2):hover {
+  background-color: #303b74;
+}
+.Task > div:nth-of-type(2):hover .edit-icon {
+  opacity: 1;
+  width: 36px;
+  z-index: 1;
+}

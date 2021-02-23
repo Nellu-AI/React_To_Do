@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TaskBody.css';
 import Task from './TaskElement/TaskElement';
 
-const taskBody = (props) => (
-  <div className="taskBody">
-    <Task />
-    <Task />
-    <Task />
-  </div>
-);
+import { useSelector, useDispatch } from 'react-redux';
+import { addTaskSlice, selectTasks } from '../../AddButton/addTaskSlice';
 
-export default taskBody;
+const TaskBody = (props) => {
+  const tasks = useSelector(selectTasks);
+
+  return (
+    <div className="taskBody">
+      {tasks.map((task) => (
+        <Task id={task.id} body={task.body} date={task.date} status={task.status} key={task.id} />
+      ))}
+    </div>
+  );
+};
+
+export default TaskBody;

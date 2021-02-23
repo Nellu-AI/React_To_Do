@@ -5,15 +5,15 @@ const addButton = (props) => (
   <button className="addButton" id="addButton">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-plus"
+      className="icon icon-tabler icon-tabler-plus"
       width="44"
       height="44"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="#fff"
       fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <line x1="12" y1="5" x2="12" y2="19"></line>
