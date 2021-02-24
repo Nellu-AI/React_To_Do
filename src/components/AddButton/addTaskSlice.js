@@ -31,15 +31,20 @@ export const addTaskSlice = createSlice({
   name: 'task',
   initialState: {
     tasksList: [...tasks],
+    isModal: false,
   },
   reducers: {
     add: (state) => {
       console.log(state);
     },
+    showModal: (state) => {
+      state.isModal = true;
+      console.log('hi');
+    },
   },
 });
 
-export const { add } = addTaskSlice.actions;
+export const { add, showModal } = addTaskSlice.actions;
 
 export const selectTasks = (state) => state.addTask.tasksList;
 

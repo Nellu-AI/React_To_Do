@@ -5,16 +5,33 @@ import './MainWindow.css';
 
 import AddButton from '../AddButton/AddButton';
 
+import { connect } from 'react-redux';
+import { showModal } from '../AddButton/addTaskSlice';
+
 class MainWindow extends Component {
   render() {
+    // console.log(this.props.tasksList, this.props.isModal);
     return (
       <div className="MainWindow">
-        <AddButton />
+        <AddButton clicked={this.props.showModal} />
         <TaskHeader />
-        <TaskBody />
+        <TaskBody taskList={this.props.tasksList} />
       </div>
     );
   }
 }
 
-export default MainWindow;
+const mapStateToProps = (state) => {
+  return {
+    tasksList: state.addTask.tasksList,
+    isModal: state.addTask.isModal,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    showModal: () => dispatch(showModal()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainWindow);
