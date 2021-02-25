@@ -2,10 +2,13 @@ import React from 'react';
 
 import './Modal.css';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { closeModal } from './modalSlice';
 
 const Modal = (props) => {
-  const isModal = useSelector((state) => state.addTask.isModal);
+  const isModal = useSelector((state) => state.modal.isModal);
+  const dispatch = useDispatch();
 
   return (
     <section className={!isModal ? 'modal' : 'modal show'} id="modal">
@@ -28,8 +31,15 @@ const Modal = (props) => {
         </select>
 
         <div className="buttons">
-          <button id="addTaskBtn">Add task</button>
-          <button id="closeModBtn">Cancel</button>
+          <button onClick={(event) => event.preventDefault()}>Add task</button>
+          <button
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(closeModal());
+            }}
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </section>

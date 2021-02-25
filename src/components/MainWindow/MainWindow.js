@@ -6,7 +6,7 @@ import './MainWindow.css';
 import AddButton from '../AddButton/AddButton';
 
 import { connect } from 'react-redux';
-import { showModal } from '../AddButton/addTaskSlice';
+import { showModal } from '../Modal/modalSlice';
 
 class MainWindow extends Component {
   render() {
@@ -24,7 +24,7 @@ class MainWindow extends Component {
 const mapStateToProps = (state) => {
   return {
     tasksList: state.addTask.tasksList,
-    isModal: state.addTask.isModal,
+    isModal: state.modal.isModal,
   };
 };
 
