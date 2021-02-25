@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import './Modal.css';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { closeModal } from './modalSlice';
+import ButtonControls from './ButtonControls/ButtonControls';
 
 const Modal = (props) => {
   const isModal = useSelector((state) => state.modal.isModal);
-  const dispatch = useDispatch();
+
+  const taskContent = useRef(null);
 
   return (
     <section className={!isModal ? 'modal' : 'modal show'} id="modal">
@@ -19,6 +20,7 @@ const Modal = (props) => {
           type="text"
           placeholder="Task text"
           autoComplete="off"
+          ref={taskContent}
         />
         <input id="taskDate" className="taskDate" type="date" disabled />
         <select className="taskStat" id="taskStatus">
@@ -29,18 +31,7 @@ const Modal = (props) => {
           <option value="basic">basic</option>
           <option value="long-term">long-term</option>
         </select>
-
-        <div className="buttons">
-          <button onClick={(event) => event.preventDefault()}>Add task</button>
-          <button
-            onClick={(event) => {
-              event.preventDefault();
-              dispatch(closeModal());
-            }}
-          >
-            Cancel
-          </button>
-        </div>
+        <ButtonControls taskText={taskContent} />
       </form>
     </section>
   );

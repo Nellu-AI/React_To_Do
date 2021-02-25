@@ -33,8 +33,8 @@ export const addTaskSlice = createSlice({
     tasksList: [...tasks],
   },
   reducers: {
-    add: (state) => {
-      console.log(state);
+    add: (state, newTask) => {
+      state.tasksList.push(newTask.payload);
     },
   },
 });
