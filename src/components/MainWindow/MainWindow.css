@@ -1,0 +1,8 @@
+.MainWindow {
+  background-color: rgb(27, 25, 25);
+  border-radius: 10px;
+  padding: 30px;
+  width: 70%;
+  height: 80%;
+  position: relative;
+}
